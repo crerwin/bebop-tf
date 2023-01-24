@@ -23,3 +23,8 @@ module "state-bucket" {
   source      = "../../modules/state-bucket"
   environment = "prod"
 }
+
+module "ecr" {
+  source      = "../../modules/ecr"
+  environment = "prod"
+}

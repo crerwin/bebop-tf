@@ -5,6 +5,13 @@ variable "environment" {
 
 resource "aws_s3_bucket" "state_bucket" {
   bucket = "bebop-tfstate-${var.environment}"
+
+  tags = {
+    name        = "bebop-tfstate-${var.environment}"
+    app         = "bebop"
+    environment = var.environment
+    repository  = "github.com/crerwin/bebop-tf"
+  }
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "state_bucket_encryption" {
