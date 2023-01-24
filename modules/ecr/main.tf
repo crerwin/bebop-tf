@@ -21,3 +21,7 @@ resource "aws_ecrpublic_repository" "bebop_ecr" {
     repository  = "github.com/crerwin/bebop-tf"
   }
 }
+
+output "ecr_arn" {
+  value = aws_ecrpublic_repository.bebop_ecr.arn
+}

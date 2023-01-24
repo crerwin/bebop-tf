@@ -28,3 +28,9 @@ module "ecr" {
   source      = "../../modules/ecr"
   environment = "prod"
 }
+
+module "iam" {
+  source      = "../../modules/iam"
+  environment = "prod"
+  ecr_arn     = module.ecr.ecr_arn
+}
