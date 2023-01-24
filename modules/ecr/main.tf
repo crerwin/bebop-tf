@@ -5,7 +5,7 @@ variable "environment" {
 
 resource "aws_ecrpublic_repository" "bebop_ecr" {
 
-  repository_name = "bebop-ecr-${var.environment}"
+  repository_name = "bebop"
 
   catalog_data {
     about_text        = "Public container registry for Bebop"
@@ -15,7 +15,7 @@ resource "aws_ecrpublic_repository" "bebop_ecr" {
   }
 
   tags = {
-    name        = "bebop-tfstate-${var.environment}"
+    name        = "bebop-ecr-${var.environment}"
     app         = "bebop"
     environment = var.environment
     repository  = "github.com/crerwin/bebop-tf"
